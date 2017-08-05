@@ -21,8 +21,8 @@ $ fcb -r
 ### Upcoming fixtures*
 ```
 # Either one of the following works.
-$ fcb --results 
-$ fcb -r
+$ fcb --fixtures 
+$ fcb -f
 ```
 
 ### Help
