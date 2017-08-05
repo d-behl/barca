@@ -11,14 +11,8 @@ $ python setup.py install
 ```
 
 ## Usage
-*Recent results*  
-```
-$ fcb --results
-```
-or
-```
-$ fcb -r
-```
+### Recent results
+`$ fcb --results' or `$ fcb -r`
 
 *Upcoming fixtures*
 ```
