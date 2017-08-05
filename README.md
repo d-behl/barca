@@ -31,4 +31,4 @@ $ fcb --help
 ```
 
 ## License
-Open sourced under [MIT License](LICENSE)
+Open sourced under [MIT License](LICENSE).
