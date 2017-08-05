@@ -12,17 +12,20 @@ $ python setup.py install
 
 ## Usage
 ### Recent results
-`$ fcb --results' or `$ fcb -r`
+```
+# Either one of the following works.
+$ fcb --results 
+$ fcb -r
+```
 
-*Upcoming fixtures*
+### Upcoming fixtures*
 ```
-$ fcb --fixtures
+# Either one of the following works.
+$ fcb --results 
+$ fcb -r
 ```
-or
-```
-$ fcb -f
-```
-*Help*
+
+### Help
 ```
 $ fcb --help
 ```
