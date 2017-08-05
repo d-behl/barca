@@ -11,14 +11,14 @@ $ python setup.py install
 ```
 
 ## Usage
-### Recent results
+### Show recent results
 ```
 # Either one of the following works.
 $ fcb --results 
 $ fcb -r
 ```
 
-### Upcoming fixtures
+### Show upcoming fixtures
 ```
 # Either one of the following works.
 $ fcb --fixtures 
