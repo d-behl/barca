@@ -16,7 +16,7 @@ class RequestHandler:
 
     BASE_URL = "http://www.skysports.com/"
 
-    def show_results(self, limit=5):
+    def show_results(self):
         """Shows recent FCB results."""
         url = self.BASE_URL + "barcelona-results"
         r = requests.get(url)
