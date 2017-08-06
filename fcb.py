@@ -10,7 +10,9 @@ class RequestHandler:
     """Handles requests for getting the information.
 
     Gets information from the 'SkySports' website about the latest FCB 
-    games (recent results, fixtures, and the current league table."""
+    games (recent results, fixtures, and the current league table.
+    
+    """
 
     BASE_URL = "http://www.skysports.com/"
 
@@ -23,7 +25,7 @@ class RequestHandler:
         teams_box = soup.findAll("span", class_="swap-text__target")
         teams = [team.text.strip() for team in teams_box]
         del teams[0]  # Extra (unimportant) team name.
-        limit = len(teams)
+        teams.remove('')
 
         scores_box = soup.findAll("span", class_="matches__teamscores-side")
         scores = [score.text.strip() for score in scores_box]
@@ -35,7 +37,7 @@ class RequestHandler:
         competitions = [competition.text.strip()
                         for competition in competitions_box]
 
-        for i in range(0, min(limit, len(teams)), 2):
+        for i in range(0, min(5, len(teams)), 2):
             print("\n", colored(competitions[i // 2].upper(), "cyan", "on_white",
                                 attrs=["reverse"]).center(88),
                   "\n", colored(dates[i // 2], "yellow").center(78),
@@ -46,7 +48,7 @@ class RequestHandler:
 
         cprint("\n\n*All dates stated according to BST.\n", "red")
 
-    def show_fixtures(self, limit=5):
+    def show_fixtures(self):
         """Shows recent FCB fixtures."""
         url = self.BASE_URL + "barcelona-fixtures"
         r = requests.get(url)
@@ -66,7 +68,7 @@ class RequestHandler:
         time_box = soup.findAll("span", class_="matches__date")
         time = [timing.text.strip() for timing in time_box]
 
-        for i in range(0, min(limit, len(teams)), 2):
+        for i in range(0, min(5, len(teams)), 2):
             print("\n", colored(competitions[i // 2].upper(), "cyan", "on_white",
                                 attrs=["reverse"]).center(88),
                   "\n", colored(dates[i // 2], "yellow").center(78),
