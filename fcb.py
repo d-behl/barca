@@ -24,8 +24,10 @@ class RequestHandler:
 
         teams_box = soup.findAll("span", class_="swap-text__target")
         teams = [team.text.strip() for team in teams_box]
-        del teams[0]  # Extra (unimportant) team name.
-        teams.remove('')
+        # Remove extra (unimportant) team names.
+        del teams[0]
+        while '' in teams:
+            teams.remove('')
 
         scores_box = soup.findAll("span", class_="matches__teamscores-side")
         scores = [score.text.strip() for score in scores_box]
@@ -56,7 +58,10 @@ class RequestHandler:
 
         teams_box = soup.findAll("span", class_="swap-text__target")
         teams = [team.text.strip() for team in teams_box]
-        del teams[0]  # Extra (unimportant) team name.
+        # Remove extra (unimportant) team names.
+        del teams[0]
+        while '' in teams:
+            teams.remove('')
 
         dates_box = soup.findAll("h4", class_="fixres__header2")
         dates = [date.text.strip() for date in dates_box]
