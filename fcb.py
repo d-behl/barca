@@ -86,7 +86,7 @@ class RequestHandler:
 
 
 @click.command()
-@click.option("--results", "-r", is_flag=True, help="Show recent resuts.")
+@click.option("--results", "-r", is_flag=True, help="Show recent results.")
 @click.option("--fixtures", "-f", is_flag=True, help="Show upcoming fixtures.")
 def main(results, fixtures):
     """FCB match details."""
